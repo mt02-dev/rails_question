@@ -9,11 +9,13 @@ class BoardsController < ApplicationController
   end
   
   def show 
-    @board = Board.find(params[:id])   
+    @board = Board.find(params[:id])
+    binding.pry
   end
   
   def create
-    Board.create(board_params)
+    board = Board.create(board_params)
+    redirect_to board
   end 
 
   def edit
@@ -25,6 +27,14 @@ class BoardsController < ApplicationController
     board.update(board_params)
 
     redirect_to board
+  end
+
+  def destroy
+    board = Board.find(params[:id])
+    board.delete
+    binding.pry
+
+    redirect_to boards_path, status: :see_other
   end
   private
 

@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   # get 'boards/new', to: 'boards#new'
   # get 'boards/:id', to: 'boards#show' 
   # post 'boards', to: 'boards#create'
-  resources :boards, only: [:index, :new, :create, :show, :edit, :update]
+  resources :boards
 end
