@@ -25,7 +25,7 @@
         <td><%= board.created_at.to_fs(:datetime_jp) %></td>
         <td><%= board.updated_at.to_fs(:datetime_jp) %></td>
         <td><%= link_to '詳細', board, class: 'btn btn-outline-dark' %></td>
-        <td><%= link_to '削除', board, class: 'btn btn-outline-dark', data: { turbo_method: :delete } %></td>
+        <td><%= link_to '削除', board, class: 'btn btn-outline-dark', data: { turbo_method: "delete" } %></td>
       </tr>
     <% end %>
   </tbody>

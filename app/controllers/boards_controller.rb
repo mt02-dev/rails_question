@@ -10,7 +10,6 @@ class BoardsController < ApplicationController
   
   def show 
     @board = Board.find(params[:id])
-    binding.pry
   end
   
   def create
@@ -32,7 +31,7 @@ class BoardsController < ApplicationController
   def destroy
     board = Board.find(params[:id])
     board.delete
-    binding.pry
+    # binding.pry
 
     redirect_to boards_path, status: :see_other
   end
