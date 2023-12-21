@@ -1,24 +1,14 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+■ 今、起きている事
+削除機能が動作しない状態です。
 
-Things you may want to cover:
+■ 解決したい事
+削除ボタン押下時にboards_controller.rbのdestroyメソッドが動作し、削除された後に、掲示板一覧が表示されるようにしたいです。
 
-* Ruby version
+■ 調べた事、考えた仮説
+以下を参考に必要な記述を行いました。
+https://railsguides.jp/working_with_javascript_in_rails.html#http%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89
+また、Udemyの動画の流れに沿って行っていたので、deleteに関する記述のスペルミス等確認を行いました。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+■ 仮説を元に行った結果
+記述ミスは特になく、コンテナ再起動、キャッシュクリアなどを試しましたが、うまく動作しませんでした。
