@@ -10,7 +10,9 @@ class BoardsController < ApplicationController
   end
   
   def show 
-  
+    #commentsはアソシエーションの設定(boardとcommentを紐付けた)で作られた特別なオブジェクト
+    # @comment = @board.comments.new
+    @comment = Comment.new(board_id: @board.id)
   end
   
   def create

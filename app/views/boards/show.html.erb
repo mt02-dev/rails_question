@@ -9,3 +9,9 @@
   <div class="alert alert-primary"><%= flash[:notice]%></div>
 <% end %>
 <%= render partial: 'board', object: @board %>
+<div class="p-comment__list">
+  <div class="p-comment_listTitle">コメント</div>
+  <%# 今回の対象はcommentの為/app/views/commentは以下の_commnet.htm.erbが対象 %>
+  <%= render @board.comments%>
+</div>
+<%= render partial: 'comments/form', locals: { comment: @comment }%>
