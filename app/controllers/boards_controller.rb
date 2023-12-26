@@ -46,7 +46,7 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    @board.delete
+    @board.destroy
 
     redirect_to boards_path, status: :see_other, flash: { notice: "#{@board.title}を削除しました。"}
   end
