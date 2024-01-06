@@ -10,17 +10,17 @@
         <%= header_link_item('Boards', boards_path) %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            ユーザー 
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <% if @current_user %>
+              <%= link_to 'マイページ', mypage_path, class: 'dropdown-item' %>
+              <%= link_to 'ログアウト', logout_path, data: { turbo_method: "delete" }, class: 'dropdown-item' %>
+            <% else %>
+              <%= link_to '登録', new_user_path, class: 'dropdown-item' %>
+              <%= link_to 'ログイン', root_path, class: 'dropdown-item' %>
+            <% end %>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
