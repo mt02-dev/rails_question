@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:session][:name])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
+      binding.pry
       redirect_to mypage_path
     else
       render 'home/index'
@@ -10,7 +11,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete
+    session.delete(:user_id)
     redirect_to root_path
   end
 end
