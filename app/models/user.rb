@@ -32,6 +32,7 @@ class User < ApplicationRecord
     length: { minimum: 8 }
   
   def age
+
     now = Time.zone.now
     # １万で割っているのは現時刻と誕生日との差分の数値から、年数の箇所を取得するため
     (now.strftime('%Y%m%d').to_i - birthday.strftime('%Y%m%d').to_i) / 10000
